@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Services</title>
+  </head>
+
+  <body>
+    <section class="main-section px-6">
+      <!-- White Header -->
+      <header
+        class="white-header bg-white shadow-md rounded-b-[10px] sticky top-0 z-50 text-left font-[Cooper] text-[14px] leading-[26px] text-[#646464] h-[65px]"
+      >
+        <div
+          class="container mx-auto max-w-[1200px] flex justify-between items-center px-4 py-2"
+        >
+          <!-- Logo -->
+          <div class="logo">
+            <img
+              src="../assets/images/home_page/FATEH LOGO@2x.png"
+              alt="Fateh Al Mustaqbil"
+              class="w-[145px] h-[42px]"
+            />
+          </div>
+
+          <!-- Hamburger Icon (Only visible on small screens) -->
+          <button
+            id="menu-toggle"
+            class="md:hidden text-[#646464] text-[24px] flex items-center justify-center"
+          >
+            &#9776;
+          </button>
+
+          <!-- Navigation Links (Visible on medium and larger screens) -->
+          <nav
+            id="nav-menu"
+            class="hidden md:flex flex-col md:flex-row items-start md:items-center md:justify-between w-full md:w-auto space-y-4 md:space-y-0 md:space-x-[48px] text-[16px] sm:text-[14px] text-[#646464] opacity-1 px-[5px]"
+          >
+            <a
+              href="/index.html"
+              class="btn-pdn"
+              data-en="Home"
+              data-ar="الرئيسية"
+            >
+              Home
+            </a>
+            <a
+              href="/pages/services.html"
+              class="active text-[#f65934] relative"
+              data-en="Services"
+              data-ar="الخدمات"
+            >
+              Services
+              <!-- Active Indicator -->
+              <span
+                class="absolute bottom-[-21px] left-1/2 transform -translate-x-1/2 w-[21px] h-[8px] bg-[#f65934] mb-2"
+                style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%)"
+              ></span>
+            </a>
+            <a
+              href="/pages/about.html"
+              class="btn-pdn"
+              data-en="About"
+              data-ar="من نحن"
+            >
+              About
+            </a>
+            <a
+              href="/pages/contact.html"
+              class="btn-pdn"
+              data-en="Contact"
+              data-ar="اتصل بنا"
+            >
+              Contact
+            </a>
+          </nav>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div
+          id="mobile-nav"
+          class="hidden bg-white shadow-md w-full mt-2 px-4 py-4 space-y-4 flex-col items-start text-[14px] sm:text-[14px] text-[#646464]"
+        >
+          <a
+            href="/index.html"
+            class="text-[#f65934] text-[14px] sm:text-[14px]"
+            data-en="Home"
+            data-ar="الرئيسية"
+          >
+            Home
+          </a>
+          <a
+            href="/pages/services.html"
+            class="text-[14px] sm:text-[14px] text-black"
+            data-en="Services"
+            data-ar="الخدمات"
+          >
+            Services
+          </a>
+          <a
+            href="/pages/about.html"
+            class="text-[14px] sm:text-[14px] text-black"
+            data-en="About"
+            data-ar="من نحن"
+          >
+            About
+          </a>
+          <a
+            href="/pages/contact.html"
+            class="text-[14px] sm:text-[14px] text-black"
+            data-en="Contact"
+            data-ar="اتصل بنا"
+          >
+            Contact
+          </a>
+        </div>
+      </header>
+
+      <!-- Script for Toggle and Resize Behavior -->
+      <script>
+        const toggleButton = document.getElementById("menu-toggle");
+        const mobileNav = document.getElementById("mobile-nav");
+
+        toggleButton.addEventListener("click", () => {
+          mobileNav.classList.toggle("hidden");
+          mobileNav.classList.toggle("flex");
+        });
+
+        // Hide mobile nav when switching to larger screens
+        window.addEventListener("resize", () => {
+          if (window.innerWidth >= 768) {
+            // When the screen is medium or larger
+            mobileNav.classList.add("hidden");
+            mobileNav.classList.remove("flex");
+          }
+        });
+      </script>
+    </section>
+
+    <!-- Footer Section -->
+    <footer
+      id="localized-footer"
+      class="bg-black text-white py-5 text-center h-auto"
+    >
+      <!-- Footer Logo -->
+      <div class="footer-logo">
+        <img
+          src="/assets/images/home_page/Footer_LOGO@2x.png"
+          alt="Fateh Al Mustaqbil"
+          class="w-[168px] h-[128px] mt-[53px] mx-auto"
+        />
+      </div>
+
+      <!-- Footer Links -->
+      <div
+        class="footer-links mt-7 flex justify-center flex-wrap gap-14 text-[18px] font-[gabriola]"
+      >
+        <a href="#" class="text-[#eeeeee]" data-en="Home" data-ar="الرئيسية"
+          >Home</a
+        >
+        <a href="#" class="text-[#eeeeee]" data-en="About" data-ar="من نحن"
+          >About</a
+        >
+        <a href="#" class="text-[#eeeeee]" data-en="Services" data-ar="خدماتنا"
+          >Services</a
+        >
+        <a href="#" class="text-[#eeeeee]" data-en="Contact" data-ar="اتصل بنا"
+          >Contact</a
+        >
+      </div>
+
+      <!-- Social Icons -->
+      <div class="social-icons mt-5 flex justify-center gap-10">
+        <img
+          src="/assets/images/home_page/facebook@2x.png"
+          alt="Facebook"
+          class="w-[20px] h-[20px]"
+        />
+        <img
+          src="/assets/images/home_page/linkedin@2x.png"
+          alt="LinkedIn"
+          class="w-[20px] h-[20px]"
+        />
+        <img
+          src="/assets/images/home_page/X@2x.png"
+          alt="X"
+          class="w-[20px] h-[20px]"
+        />
+      </div>
+
+      <!-- Footer Text -->
+      <p
+        class="footer-text text-[#979797] font-[gabriola] text-[16px] mt-[30px] mb-[30px]"
+        data-en="&copy; 2023 Fateh Al Mustaqbil. All rights reserved."
+        data-ar="&copy; 2023 فتح المستقبل. جميع الحقوق محفوظة."
+      >
+        &copy; All right reserved for 2024
+      </p>
+    </footer>
+  </body>
+</html>
