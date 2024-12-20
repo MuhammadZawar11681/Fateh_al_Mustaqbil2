@@ -1,7 +1,7 @@
 /* General Styles */
 body {
   margin: 0;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
 }
 
 .main-section {
@@ -69,61 +69,128 @@ body {
 .white-header .btn-pdn {
   margin: 0 0px 0 32px;
 }
-#home-btn {
-  margin-right: 32px;
+/* services */
+/* Container */
+.services-container {
+  margin-top: 41px;
 }
 
-/* about */
-/* About Section */
-.about-section {
-  position: relative;
-  background-color: rgba(246, 219, 90, 0.1); /* Light golden background */
-  padding: 3rem 2rem;
-  border-radius: 16px;
-  margin: 4rem 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 617px;
-  width: 900px;
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2rem 0;
 }
 
-/* SVG Decoration */
-.svg-decorator {
-  position: absolute;
-  top: -40px;
-  left: 20px;
-  opacity: 0.5;
-  z-index: 0;
-}
-
-/* Content Wrapper */
-.about-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: center;
-  z-index: 1; /* Keeps the content above the SVG */
-}
-
-/* Text Content */
-.text-content {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  font-size: 1rem;
-  color: #333; /* Dark text color */
-}
-
-.text-content h1 {
-  text-align: left;
-  font: normal normal 900 35px/26px Cooper;
+/* Main Title */
+.main-title {
+  text-align: center;
+  font: normal normal 900 40px/26px Cooper;
   letter-spacing: 0px;
   color: #000000;
   opacity: 1;
 }
 
-.text-content p {
+/* Description Container */
+.description-container {
+  color: #333; /* Dark Gray */
+  text-align: center;
+  line-height: 1.6;
+  font: normal normal normal 26px/30px Gabriola;
+}
+
+.description-container span {
+  display: block;
+}
+
+.rtl .description-container {
+  font-family: "Kufam", sans-serif; /* For RTL Text */
+  line-height: 2;
+  font-size: 1.125rem; /* lg:text-xl equivalent */
+}
+
+.ltr .description-container {
+  font-size: 1.25rem; /* text-[20px] */
+}
+
+@media (min-width: 1024px) {
+  .ltr .description-container {
+    font-size: 1.625rem; /* lg:text-[26px] */
+  }
+}
+
+.text-dark-gray {
+  color: #555; /* Example dark-gray color */
+}
+
+/* services */
+/* Services Container */
+.services-container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 0 2rem;
+  margin-bottom: 4rem;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.service-item.reverse {
+  flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+  .service-item {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .service-item.reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+/* Service Image */
+.service-image {
+  max-width: 500px;
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  opacity: 1;
+}
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.service-number {
+  text-align: left;
+  font: normal normal medium 70px/95px General Sans;
+  letter-spacing: 0px;
+  color: #bd9c0080;
+  opacity: 1;
+  font-size: 70px;
+}
+
+.service-title h1 {
+  text-align: left;
+  font: normal normal 900 36px/52px Cooper;
+  letter-spacing: 0px;
+  color: #182f43;
+  font-size: 36px;
+  margin: 0;
+  opacity: 1;
+}
+
+.service-description {
   text-align: left;
   font: normal normal normal 22px/26px Gabriola;
   letter-spacing: 0px;
@@ -131,70 +198,124 @@ body {
   opacity: 1;
 }
 
-/* Image Content */
-.image-content img {
-  width: 349px;
-  height: 522px;
-  height: auto;
-  object-fit: contain;
-  border-radius: 24px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Primary Button */
+.primary-btn {
+  background-color: #daa520;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: "Gabriola", cursive;
+  width: 139px;
+  height: 46px;
 }
 
-/* RESPONSIVE DESIGN */
+.primary-btn:hover {
+  background-color: #b8860b;
+}
 
-/* Medium screens (tablets and small laptops) */
-@media (min-width: 768px) {
-  .about-content {
-    grid-template-columns: 1fr 1fr; /* Side-by-side layout */
-    gap: 3rem;
+/* Responsive Design for Smaller Screens */
+@media (max-width: 1024px) {
+  .services-container {
+    padding: 0 1.5rem;
   }
 
-  .text-content h1 {
-    font-size: 2.5rem;
+  .service-item {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .text-content p {
-    font-size: 1.2rem;
+  .service-image {
+    width: 400px;
+    height: 400px;
+  }
+
+  .service-number {
+    font-size: 50px;
+  }
+
+  .service-title h1 {
+    font-size: 28px;
+  }
+
+  .service-description {
+    font-size: 20px;
+  }
+
+  .primary-btn {
+    font-size: 16px;
+    width: 120px;
+    height: 40px;
   }
 }
 
-/* Large screens (desktops) */
-@media (min-width: 1024px) {
-  .about-section {
-    padding: 5rem 4rem;
-    margin: 6rem 8rem;
+@media (max-width: 768px) {
+  .services-container {
+    padding: 0 1rem;
   }
 
-  .text-content h1 {
-    font-size: 3rem;
+  .service-item {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .text-content p {
-    font-size: 1.25rem;
+  .service-image {
+    width: 300px;
+    height: 300px;
   }
 
-  .image-content img {
-    max-width: 400px;
+  .service-number {
+    font-size: 40px;
+  }
+
+  .service-title h1 {
+    font-size: 24px;
+  }
+
+  .service-description {
+    font-size: 18px;
+  }
+
+  .primary-btn {
+    font-size: 14px;
+    width: 110px;
+    height: 35px;
   }
 }
 
-/* Extra large screens (2K, wide monitors) */
-@media (min-width: 1440px) {
-  .about-section {
-    margin: 8rem 12rem;
+@media (max-width: 480px) {
+  .services-container {
+    padding: 0 0.5rem;
   }
 
-  .text-content h1 {
-    font-size: 3.5rem;
+  .service-item {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .text-content p {
-    font-size: 1.3rem;
+  .service-image {
+    width: 250px;
+    height: 250px;
   }
 
-  .image-content img {
-    max-width: 450px;
+  .service-number {
+    font-size: 30px;
+  }
+
+  .service-title h1 {
+    font-size: 22px;
+  }
+
+  .service-description {
+    font-size: 16px;
+  }
+
+  .primary-btn {
+    font-size: 12px;
+    width: 100px;
+    height: 30px;
   }
 }
 
