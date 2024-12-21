@@ -1,0 +1,518 @@
+/* General Styles */
+body {
+  margin: 0;
+  background-color: #ffffff;
+}
+
+.main-section {
+  margin: 0 35px;
+}
+.container {
+  width: 90%;
+  margin: auto;
+  max-width: 1200px;
+}
+
+/* White Header */
+.white-header {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000012;
+  border-radius: 0px 0px 10px 10px;
+  opacity: 1;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  text-align: left;
+  font: normal normal 900 14px/26px Cooper;
+  letter-spacing: 0px;
+  color: #646464;
+  opacity: 1;
+  height: 65px;
+}
+
+.white-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.white-header .logo img {
+  width: 145px;
+  height: 42px;
+}
+
+.white-header nav a {
+  color: #000;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 16px;
+  position: relative;
+}
+
+.white-header nav a.active {
+  color: #f65934;
+}
+
+.white-header nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -21px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 21px;
+  height: 8px;
+  background-color: #f65934;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.white-header .btn-pdn {
+  margin: 0 0px 0 32px;
+}
+#home-btn {
+  margin-right: 32px;
+}
+
+/* contact */
+.contact-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header Styling */
+.contact-container h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.header-icons .left-icon,
+.header-icons .right-icon {
+  position: absolute;
+  background-color: #f6db5a;
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.header-icons .left-icon {
+  width: 50px;
+  height: 50px;
+  top: 20px;
+  left: -10px;
+}
+
+.header-icons .right-icon {
+  width: 70px;
+  height: 70px;
+  top: 10px;
+  right: -20px;
+}
+
+/* Form Styling */
+.contact-form form {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: none;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+/* Submit Button */
+.form-submit {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+}
+
+.form-submit button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #bd9c00;
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-submit button:hover {
+  background-color: #a88400;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .contact-form form {
+    grid-template-columns: 1fr;
+  }
+  .full-width {
+    grid-column: span 1;
+  }
+}
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding: 0px 400px 0px 400px;
+  background: rgba(246, 219, 90, 0.17) padding-box;
+}
+
+.contact-form,
+.contact-info {
+  margin-bottom: 30px;
+  width: 736px;
+  height: 453px;
+  padding: 50px 50px 0px 50px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+.contact-form h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+
+  text-align: center;
+  font: normal normal normal 20px/26px Gabriola;
+  letter-spacing: 0px;
+  color: #363636;
+  opacity: 1;
+}
+
+.input-group {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.input-box {
+  background: #f2f2f2 0% 0% no-repeat padding-box;
+  border: 1px solid #d5d5d5;
+  border-radius: 2px;
+  opacity: 1;
+  width: 300px;
+}
+
+textarea {
+  resize: none;
+}
+
+.send-btn {
+  width: 100%;
+  background-color: #f4b400;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.send-btn:hover {
+  background-color: #f4a400;
+}
+
+.contact-info {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.map-info {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.map-info p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .input-group {
+    flex-direction: column;
+  }
+
+  .input-group input,
+  .input-group select,
+  textarea {
+    width: 100%;
+  }
+}
+
+.submit-btn {
+  border: 1px solid #bd9c00;
+  border-radius: 2px;
+  opacity: 1;
+}
+/* section */
+.container-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+/* Title */
+.contact-title {
+  text-align: left;
+  font: normal normal 900 35px/26px Cooper;
+  letter-spacing: 0px;
+  color: #1c1c1c;
+  opacity: 1;
+}
+.side-text {
+  text-align: left;
+  font: normal normal normal 26px/26px Gabriola;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+
+/* Contact Items */
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 1.25rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.2rem;
+}
+
+/* SVG Icons */
+svg {
+  width: 26px;
+  height: 26px;
+}
+
+/* Separator Line */
+.separator {
+  background-color: #efd969;
+  height: 40px;
+  width: 2px;
+  display: inline-block;
+}
+
+/* Address */
+.contact-address {
+  display: flex;
+  flex-direction: column;
+}
+/* backgroud */
+/* Section Container */
+.section-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 400px;
+  background: url("/assets/images/contact_page/Mask\ Group\ 3@2x.png") center
+    center no-repeat;
+  background-size: cover;
+  z-index: 10;
+}
+
+/* Transparent Golden Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 215, 0, 0.2); /* Golden-light/20 equivalent */
+  z-index: 20;
+}
+
+/* Content Box */
+.content-box {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(184, 134, 11, 0.6); /* Golden-dark/80 equivalent */
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+}
+
+/* Text Box */
+.text-box {
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* Title */
+.title {
+  font: normal normal normal 24px/35px Gabriola;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+  margin-bottom: 0px;
+}
+
+/* Subtitle */
+.sub-title {
+  font: normal normal 900 48px/26px Cooper;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+  margin-top: 0px;
+}
+
+/* info */
+/* cont Info Section */
+.contact-info-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  background-color: #fdfbee;
+  padding: 20px;
+  font-family: "Georgia", serif;
+  color: #333;
+  flex-wrap: wrap;
+}
+
+.timing-info {
+  font: normal normal normal 28px/26px Gabriola;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font: normal normal normal 18px/1.5 "Gabriola";
+  text-align: center;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-item img {
+  width: 20px;
+  height: 30px;
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  height: 379px;
+
+  opacity: 1;
+}
+
+.footer-logo img {
+  width: 168px;
+  height: 128px;
+  margin-top: 53px;
+}
+
+.footer-links {
+  margin: 20px 0;
+}
+
+.footer-links a {
+  color: #eeeeee;
+  font-family: Gabriola;
+  font-weight: regular;
+  font-size: 18px;
+  text-decoration: none;
+  margin: 0 30px;
+}
+
+.social-icons img {
+  height: 20px;
+  width: 20px;
+  margin: 0 15px;
+}
+
+footer p {
+  color: #979797;
+  font-family: Gabriola;
+  font-weight: regular;
+  font-size: 16px;
+  margin-top: 70px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .white-header .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+  }
+}

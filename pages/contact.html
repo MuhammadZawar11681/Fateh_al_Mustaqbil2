@@ -487,7 +487,6 @@
       </h1>
       <section
         class="flex flex-col gap-y-6 w-full px-4 sm:px-0 sm:w-4/5 lg:w-[750px] relative !z-10"
-        
       >
         <form
           class="ant-form ant-form-vertical css-xu9wm8 flex flex-col gap-y-3 md:grid md:grid-cols-2 bg-white px-6 py-9 gap-5 ltr:font-gabriola rtl:font-kufam rounded-xl"
@@ -511,7 +510,7 @@
                     <input
                       placeholder=""
                       id="name"
-                      class="ant-input css-xu9wm8 h-10 ltr:font-gabriola rtl:font-kufam rtl:text-sm rtl:md:text-base rtl:xl:text-lg text-xl md:text-lg xl:text-xl"
+                      class="ant-input css-xu9wm8 h-10 ltr:font-gabriola rtl:font-kufam rtl:text-sm rtl:md:text-base rtl:xl:text-lg md:text-lg xl:text-xl p-2 border border-gray-300 rounded-md text-base"
                       type="text"
                       value=""
                     />
@@ -539,7 +538,7 @@
                     <input
                       placeholder=""
                       id="email"
-                      class="ant-input css-xu9wm8 h-10 ltr:font-gabriola rtl:font-kufam rtl:text-sm rtl:md:text-base rtl:xl:text-lg text-xl md:text-lg xl:text-xl"
+                      class="ant-input p-2 border border-gray-300 rounded-md css-xu9wm8 h-10 ltr:font-gabriola rtl:font-kufam rtl:text-sm rtl:md:text-base rtl:xl:text-lg text-xl md:text-lg xl:text-xl"
                       type="text"
                       value=""
                     />
@@ -567,7 +566,7 @@
                     <input
                       placeholder=""
                       id="number"
-                      class="ant-input css-xu9wm8 h-10 ltr:font-gabriola rtl:font-kufam rtl:text-sm rtl:md:text-base rtl:xl:text-lg text-xl md:text-lg xl:text-xl"
+                      class="ant-input css-xu9wm8 p-2 border border-gray-300 rounded-md h-10 ltr:font-gabriola rtl:font-kufam rtl:text-sm rtl:md:text-base rtl:xl:text-lg text-xl md:text-lg xl:text-xl"
                       type="text"
                       value=""
                     />
@@ -662,11 +661,12 @@
                       <textarea
                         placeholder=""
                         id="description"
-                        class="ant-input css-xu9wm8 h-10 ltr:font-gabriola rtl:font-kufam rtl:text-sm rtl:md:text-base rtl:xl:text-lg text-xl md:text-lg xl:text-xl"
+                        class="ant-input css-xu9wm8 p-2 border border-gray-300 w-full rounded-md h-10 ltr:font-gabriola rtl:font-kufam rtl:text-sm rtl:md:text-base rtl:xl:text-lg text-xl md:text-lg xl:text-xl"
                         style="
                           overflow-y: hidden;
                           resize: none;
                           height: 133.333px;
+
                           min-height: 133.333px;
                           max-height: 257.333px;
                         "
@@ -680,7 +680,7 @@
           <div class="flex items-center justify-end col-span-2 mt-2">
             <button
               type="submit"
-              class="ant-btn css-xu9wm8 ant-btn-default secondary-btn rtl:text-base rtl:md:text-lg rtl:xl:text-xl text-[22px] ltr:font-gabriola rtl:font-kufam"
+              class="ant-btn css-xu9wm8 border border-[#BD9C00] rounded-sm opacity-100 ant-btn-default secondary-btn rtl:text-base rtl:md:text-lg rtl:xl:text-xl text-[22px] ltr:font-gabriola rtl:font-kufam"
             >
               Send
             </button>
@@ -1299,6 +1299,7 @@
       </svg>
       <div
         class="flex flex-col gap-y-7 items-center justify-center xl:gap-y-10 px-8"
+        style="font-family: Gabriola"
       >
         <h1
           class="rtl:text-[22px] text-xl sm:text-[28px] xl:text-[35px] rtl:font-bold ltr:font-cooper rtl:font-kufam"
@@ -1325,7 +1326,7 @@
                 transform="translate(-1.112 -1)"
                 fill="#f6db5a"
               ></path></svg
-            ><span class="bg-golden h-10 w-[2px]"></span
+            ><span class="bg-[#F6DB5A] h-10 w-[2px]"></span
             ><span>011 200 4951</span>
           </div>
           <div
@@ -1352,7 +1353,7 @@
                 transform="translate(1 -0.214)"
                 fill="#f6db5a"
               ></path></svg
-            ><span class="bg-golden h-10 w-[2px]"></span
+            ><span class="bg-[#F6DB5A] h-10 w-[2px]"></span
             ><span>contact@fatehtour.com</span>
           </div>
           <div
@@ -1379,7 +1380,7 @@
                 transform="translate(9.286 9.285)"
                 fill="#f6db5a"
               ></path></svg
-            ><span class="bg-golden h-10 w-[2px]"></span>
+            ><span class="bg-[#F6DB5A] h-10 w-[2px]"></span>
             <div class="flex flex-col">
               <span>Haye Al Mansoura, Riyadh</span>
             </div>
@@ -1387,7 +1388,8 @@
         </div>
       </div>
     </section>
-    <!-- //backgroundmap -->
+
+    <!-- //back ground map -->
     <section
       class="relative overflow-hidden w-full h-[400px] bg-fixed z-10"
       style="
@@ -1397,9 +1399,9 @@
       "
     >
       <div
-        class="absolute inset-0 z-20 flex flex-col items-center justify-center w-full h-full bg-golden-light/20"
+        class="absolute inset-0 z-20 flex flex-col items-center justify-center w-full h-full bg-[#F6DB5A]/20"
       ></div>
-      <div class="absolute w-full bg-golden-dark/80 bottom-0 py-12">
+      <div class="absolute w-full bg-[rgba(184,134,11,0.6)]/80 bottom-0 py-12">
         <div
           class="flex items-center flex-col justify-center w-full h-full text-white md:px-20 rtl:gap-y-2"
         >
