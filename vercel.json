@@ -1,8 +1,8 @@
 {
     "rewrites": [
       {
-        "source": "/pages/(.*)",
-        "destination": "/pages/$1"
+        "source": "/(.*)",
+        "destination": "/"
       }
     ]
   }
