@@ -11,6 +11,78 @@
     />
 
     <title>contact</title>
+
+    <!-- javaScript -->
+    <script>
+      // Function to set page language based on selected language from localStorage
+      function setLanguage(lang) {
+        const aboutTexts = document.querySelectorAll(".about-text");
+        const footerLinks = document.querySelectorAll(".footer-links a");
+        const footerText = document.querySelector(".footer-text");
+        const headerLinks = document.querySelectorAll("nav a");
+        const imageContent = document.querySelector(".image-content img");
+
+        // Change direction and alignment based on language
+        if (lang === "arb") {
+          document.body.style.direction = "rtl";
+          document.body.style.textAlign = "right";
+
+          // Flip images for RTL layout (if imageContent exists)
+          if (imageContent) {
+            imageContent.style.transform = "scaleX(-1)";
+          }
+
+          aboutTexts.forEach((text) => {
+            text.textContent = text.getAttribute("data-ar");
+          });
+
+          // Change navigation and footer links text
+          headerLinks.forEach((link) => {
+            link.textContent = link.getAttribute("data-ar");
+          });
+          footerLinks.forEach((link) => {
+            link.textContent = link.getAttribute("data-ar");
+          });
+
+          footerText.innerHTML = footerText.getAttribute("data-ar");
+        } else {
+          document.body.style.direction = "ltr";
+          document.body.style.textAlign = "left";
+
+          // Reset flipped images (if imageContent exists)
+          if (imageContent) {
+            imageContent.style.transform = "scaleX(1)";
+          }
+
+          aboutTexts.forEach((text) => {
+            text.textContent = text.getAttribute("data-en");
+          });
+
+          // Change navigation and footer links text
+          headerLinks.forEach((link) => {
+            link.textContent = link.getAttribute("data-en");
+          });
+          footerLinks.forEach((link) => {
+            link.textContent = link.getAttribute("data-en");
+          });
+
+          footerText.innerHTML = footerText.getAttribute("data-en");
+        }
+      }
+
+      // Event listener to change language based on selector
+      window.addEventListener("DOMContentLoaded", () => {
+        const selectedLang = localStorage.getItem("selectedLang") || "eng"; // Default to "eng" if nothing is saved
+        setLanguage(selectedLang);
+      });
+
+      // Listen to language change from the homepage (if applicable)
+      window.addEventListener("storage", (e) => {
+        if (e.key === "selectedLang") {
+          setLanguage(e.newValue);
+        }
+      });
+    </script>
   </head>
 
   <body>
@@ -480,8 +552,10 @@
           </g></svg
       ></span>
       <h1
-        class="text-4xl xl:text-[55px] ltr:font-[cooper] rtl:font-bold rtl:font-[Cooper] mb-8 relative !z-10"
+        class="about-text text-4xl xl:text-[55px] ltr:font-[cooper] rtl:font-bold rtl:font-[Cooper] mb-8 relative !z-10"
         style="font-family: Cooper"
+        data-en="Contact Us"
+        data-ar="اتصل بنا"
       >
         Contact Us
       </h1>
@@ -498,7 +572,9 @@
                   <div class="flex items-center gap-x-1">
                     <span class="text-secondary"
                       ><span
-                        class="ltr:font-gabriola rtl:font-kufam rtl:text-sm rtl:md:text-base rtl:xl:text-lg text-xl md:text-lg xl:text-xl"
+                        class="about-text ltr:font-gabriola rtl:font-kufam rtl:text-sm rtl:md:text-base rtl:xl:text-lg text-xl md:text-lg xl:text-xl"
+                        data-en="Name"
+                        data-ar="اسم"
                         >Name</span
                       ></span
                     ><span class="text-pink font-bold"></span>
@@ -527,7 +603,9 @@
                   <div class="flex items-center gap-x-1">
                     <span class="text-secondary"
                       ><span
-                        class="ltr:font-gabriola rtl:font-kufam rtl:text-sm rtl:md:text-base rtl:xl:text-lg text-xl md:text-lg xl:text-xl"
+                        class="about-text ltr:font-gabriola rtl:font-kufam rtl:text-sm rtl:md:text-base rtl:xl:text-lg text-xl md:text-lg xl:text-xl"
+                        data-en="Email"
+                        data-ar="بريد إلكتروني"
                         >Email</span
                       ></span
                     ><span class="text-pink font-bold"></span>
@@ -556,7 +634,9 @@
                   <div class="flex items-center gap-x-1">
                     <span class="text-secondary"
                       ><span
-                        class="ltr:font-gabriola rtl:font-kufam rtl:text-sm rtl:md:text-base rtl:xl:text-lg text-xl md:text-lg xl:text-xl"
+                        class="about-text ltr:font-gabriola rtl:font-kufam rtl:text-sm rtl:md:text-base rtl:xl:text-lg text-xl md:text-lg xl:text-xl"
+                        data-en="Phone Number"
+                        data-ar="رقم التليفون"
                         >Phone Number</span
                       ></span
                     ><span class="text-pink font-bold"></span>
@@ -585,7 +665,9 @@
                   <div class="flex items-center gap-x-1">
                     <span class="text-secondary"
                       ><span
-                        class="ltr:font-gabriola rtl:font-kufam rtl:text-sm rtl:md:text-base rtl:xl:text-lg text-xl md:text-lg xl:text-xl"
+                        class="about-text ltr:font-gabriola rtl:font-kufam rtl:text-sm rtl:md:text-base rtl:xl:text-lg text-xl md:text-lg xl:text-xl"
+                        data-en="Services Required"
+                        data-ar="الخدمات المطلوبة"
                         >Services Required</span
                       ></span
                     ><span class="text-pink font-bold"></span>
@@ -646,7 +728,9 @@
                     <div class="flex items-center gap-x-1">
                       <span class="text-secondary"
                         ><span
-                          class="ltr:font-gabriola rtl:font-kufam rtl:text-sm rtl:md:text-base rtl:xl:text-lg text-xl md:text-lg xl:text-xl"
+                          class="about-text ltr:font-gabriola rtl:font-kufam rtl:text-sm rtl:md:text-base rtl:xl:text-lg text-xl md:text-lg xl:text-xl"
+                          data-en="Description"
+                          data-ar="وصف"
                           >Description</span
                         ></span
                       ><span class="text-pink font-bold"></span>
@@ -678,7 +762,9 @@
           <div class="flex items-center justify-end col-span-2 mt-2">
             <button
               type="submit"
-              class="ant-btn css-xu9wm8 border border-[#BD9C00] text-[#bd9c00] w-28 rounded-sm opacity-100 ant-btn-default secondary-btn rtl:text-base rtl:md:text-lg rtl:xl:text-xl text-[22px] ltr:font-[gabriola] rtl:font-[kufam]"
+              class="about-text ant-btn css-xu9wm8 border border-[#BD9C00] text-[#bd9c00] w-28 rounded-sm opacity-100 ant-btn-default secondary-btn rtl:text-base rtl:md:text-lg rtl:xl:text-xl text-[22px] ltr:font-[gabriola] rtl:font-[kufam]"
+              data-en="Send"
+              data-ar="یرسل"
             >
               Send
             </button>
@@ -691,14 +777,26 @@
             class="flex flex-col items-center justify-center sm:items-start gap-y-6"
           >
             <h1
-              class="rtl:text-[27px] rtl:font-bold rtl:xl:text-[28px] text-[29px] xl:text-[32px]"
+              class="about-text rtl:text-[27px] rtl:font-bold rtl:xl:text-[28px] text-[29px] xl:text-[32px]"
+              data-en="Timings"
+              data-ar="التوقيتات"
             >
               Timings
             </h1>
             <div
               class="flex flex-col rtl:text-xl rtl:xl:text-2xl text-[24px] xl:text-[28px] rtl:leading-10 leading-6"
             >
-              <span>Sunday - Thursday</span><span>9:00 am - 6:00pm</span>
+              <span
+                class="about-text"
+                data-en="Sunday - Thursday"
+                data-ar="الأحد الخميس"
+                >Sunday - Thursday</span
+              ><span
+                class="about-text"
+                data-en="9:00 am - 6:00pm"
+                data-ar="9:00 صباحًا - 6:00 مساءً"
+                >9:00 am - 6:00pm</span
+              >
             </div>
           </div>
           <div class="flex flex-col justify-center gap-y-8">
@@ -782,7 +880,12 @@
                 </g>
               </svg>
               <div class="flex flex-col">
-                <span>Haye Al Mansoura, Riyadh</span>
+                <span
+                  class="about-text"
+                  data-en="Haye Al Mansoura, Riyadh"
+                  data-ar="حي المنصورة، الرياض"
+                  >Haye Al Mansoura, Riyadh</span
+                >
               </div>
             </div>
           </div>
@@ -1300,7 +1403,9 @@
         style="font-family: Gabriola"
       >
         <h1
-          class="rtl:text-[22px] text-xl sm:text-[28px] xl:text-[35px] rtl:font-bold ltr:font-cooper rtl:font-kufam"
+          class="about-text rtl:text-[22px] text-xl sm:text-[28px] xl:text-[35px] rtl:font-bold ltr:font-cooper rtl:font-kufam"
+          data-en="You can directly reach to us"
+          data-ar="يمكنك الوصول إلينا مباشرة"
         >
           You can directly reach to us
         </h1>
@@ -1380,7 +1485,12 @@
               ></path></svg
             ><span class="bg-[#F6DB5A] h-10 w-[2px]"></span>
             <div class="flex flex-col">
-              <span>Haye Al Mansoura, Riyadh</span>
+              <span
+                class="about-text"
+                data-en="Haye Al Mansoura, Riyadh"
+                data-ar="حي المنصورة، الرياض"
+                >Haye Al Mansoura, Riyadh</span
+              >
             </div>
           </div>
         </div>
@@ -1404,12 +1514,17 @@
           class="flex items-center flex-col justify-center w-full h-full text-white md:px-20 rtl:gap-y-2"
         >
           <h1
-            class="font-[gabriola] text-white opacity-1 ltr:font-[gabriola] rtl:[font-kufam] rtl:text-2xl rtl:md:text-3xl text-3xl text-center"
+            class="about-text font-[gabriola] text-white opacity-1 ltr:font-[gabriola] rtl:[font-kufam] rtl:text-2xl rtl:md:text-3xl text-3xl text-center"
+            data-en="Currently Operational in"
+            data-ar="العاملة حاليا في"
           >
             Currently Operational in
           </h1>
           <h1
-            class="font-[cooper] ltr:font-cooper rtl:font-bold rtl:font-kufam rtl:text-3xl rtl:md:text-5xl text-5xl text-center"
+            class="about-text font-[cooper] ltr:font-cooper rtl:font-bold rtl:font-kufam rtl:text-3xl rtl:md:text-5xl text-5xl text-center"
+            class="about-text"
+            data-en="Saudi Arabia"
+            data-ar="  المملكة العربية السعودية"
           >
             Saudi Arabia
           </h1>
