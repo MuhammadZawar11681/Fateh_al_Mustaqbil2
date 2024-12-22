@@ -625,6 +625,7 @@
 
           phoneText.textContent = "+966 123 456 897"; // Arabic stays the same
           locationText.textContent = "منطقة النور الصناعية، الرياض";
+          // locationText.classList.add("text-red-500");
 
           navLinks.forEach((link) => {
             link.textContent = link.getAttribute("data-ar");
@@ -650,6 +651,7 @@
 
           servicesSection.style.textAlign = "right";
         } else {
+          // location.reload();
           document.body.style.direction = "ltr";
           document.body.style.textAlign = "left";
 
