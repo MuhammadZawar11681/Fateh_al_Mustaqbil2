@@ -11,6 +11,77 @@
     />
 
     <title>Services</title>
+    <!-- javaScript -->
+    <script>
+      // Function to set page language based on selected language from localStorage
+      function setLanguage(lang) {
+        const aboutTexts = document.querySelectorAll(".about-text");
+        const footerLinks = document.querySelectorAll(".footer-links a");
+        const footerText = document.querySelector(".footer-text");
+        const headerLinks = document.querySelectorAll("nav a");
+        const imageContent = document.querySelector(".image-content img");
+
+        // Change direction and alignment based on language
+        if (lang === "arb") {
+          document.body.style.direction = "rtl";
+          document.body.style.textAlign = "right";
+
+          // Flip images for RTL layout (if imageContent exists)
+          if (imageContent) {
+            imageContent.style.transform = "scaleX(-1)";
+          }
+
+          aboutTexts.forEach((text) => {
+            text.textContent = text.getAttribute("data-ar");
+          });
+
+          // Change navigation and footer links text
+          headerLinks.forEach((link) => {
+            link.textContent = link.getAttribute("data-ar");
+          });
+          footerLinks.forEach((link) => {
+            link.textContent = link.getAttribute("data-ar");
+          });
+
+          footerText.innerHTML = footerText.getAttribute("data-ar");
+        } else {
+          document.body.style.direction = "ltr";
+          document.body.style.textAlign = "left";
+
+          // Reset flipped images (if imageContent exists)
+          if (imageContent) {
+            imageContent.style.transform = "scaleX(1)";
+          }
+
+          aboutTexts.forEach((text) => {
+            text.textContent = text.getAttribute("data-en");
+          });
+
+          // Change navigation and footer links text
+          headerLinks.forEach((link) => {
+            link.textContent = link.getAttribute("data-en");
+          });
+          footerLinks.forEach((link) => {
+            link.textContent = link.getAttribute("data-en");
+          });
+
+          footerText.innerHTML = footerText.getAttribute("data-en");
+        }
+      }
+
+      // Event listener to change language based on selector
+      window.addEventListener("DOMContentLoaded", () => {
+        const selectedLang = localStorage.getItem("selectedLang") || "eng"; // Default to "eng" if nothing is saved
+        setLanguage(selectedLang);
+      });
+
+      // Listen to language change from the homepage (if applicable)
+      window.addEventListener("storage", (e) => {
+        if (e.key === "selectedLang") {
+          setLanguage(e.newValue);
+        }
+      });
+    </script>
   </head>
 
   <body>
@@ -150,7 +221,7 @@
       <section class="services py-10 font-[gabriola]">
         <div class="container mx-auto px-4">
           <h1
-            class="main-title service-text text-lg font-[Cooper] md:text-5xl text-center font-extrabold text-dark-gray mb-6"
+            class="about-text main-title service-text text-lg font-[Cooper] md:text-5xl text-center font-extrabold text-dark-gray mb-6"
             data-en="Services by FATEH"
             data-ar="خدمات من فَتْح"
           >
@@ -354,7 +425,7 @@
                 </g></svg
             ></span>
             <span
-              class="service-text"
+              class="about-text service-text"
               data-en="Elevate your travel experience with our comprehensive and efficient solutions. We leverage"
               data-ar="رفع تجربتك في السفر مع حلولنا الشاملة والفعالة. نحن نستفيد من"
             >
@@ -362,7 +433,7 @@
               efficient solutions. We leverage
             </span>
             <span
-              class="service-text"
+              class="about-text service-text"
               data-en="a wide range of travel services, all aimed at making your travel journey smooth and enjoyable."
               data-ar="مجموعة واسعة من خدمات السفر، جميعها تهدف إلى جعل رحلتك سهلة وممتعة."
             >
@@ -388,26 +459,34 @@
                 >
                   01
                 </span>
+
                 <div class="service-title">
                   <h1
-                    class="service-text text-left font-extrabold font-[Cooper] text-[36px] leading-[52px] text-[#182f43]"
+                    class="about-text service-text text-left font-extrabold font-[Cooper] text-[36px] leading-[52px] text-[#182f43]"
                     data-en="International And Domestic"
-                    data-ar="الرحلات الدولية والمحلية"
+                    data-ar="لدولية و"
                   >
                     International And Domestic
                   </h1>
                   <h1
-                    class="service-text text-left font-extrabold font-[Cooper] text-[36px] leading-[52px] text-[#182f43]"
+                    class="about-text service-text text-left font-extrabold font-[Cooper] text-[36px] leading-[52px] text-[#182f43]"
                     data-en="Flight Tickets"
-                    data-ar="تذاكر الطيران"
+                    data-ar="تذاكر الطيران الداخلي"
                   >
                     Flight Tickets
                   </h1>
                 </div>
                 <p
-                  class="service-description service-text text-left text-[22px] leading-[26px] font-normal text-[#182f43]"
-                  data-en="Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus..."
-                  data-ar="لنعيش عدالة عظيمة، لاسينيا بحاجة إلى متابعة..."
+                  class="about-text service-description service-text text-left text-[22px] leading-[26px] font-normal text-[#182f43]"
+                  data-en="Vivamus magna justo, lacinia eget consectetur sed, convallis
+                  at tellus. Vestibulum ante ipsum primis in faucibus orci
+                  luctus et ultrices posuere cubilia Curae; Donec velit neque,
+                  auctor sit amet aliquam vel, ullamcorper sit amet ligula.
+                  Curabitur arcu erat, accumsan id imperdiet et, porttitor at
+                  sem. Curabitur aliquet quam id dui posuere blandit.
+                  Pellentesque in ipsum id orci porta dapibus. Cras ultricies
+                  ligula sed magna dictum porta."
+                  data-ar="لنعيش عدالة عظيمة، لاسينيا بحاجة إلى متابعة، لكن الوادي والمنطقة. للاستلقاء أمامه أولاً في حناجر المستشفى، وأسرة الرعاية، وحتى يريد ذلك أم لا، قد يكون للمؤلف بعض الاهتمام، أو قد يكون العريف موضع اهتمام. لقد كانت بمثابة عتبة، وكانت طبقة من التمويل، وفي نفس الوقت، شركة الطيران. الفصل الدراسي ممتع لوضعه على الله. يدخل الأطفال من باب العيادة. غدًا قيل أن البوابة صغيرة ولكنها كبيرة"
                 >
                   Vivamus magna justo, lacinia eget consectetur sed, convallis
                   at tellus. Vestibulum ante ipsum primis in faucibus orci
@@ -459,7 +538,14 @@
                 </div>
                 <p
                   class="service-description service-text text-left text-[22px] leading-[26px] font-normal text-[#182f43]"
-                  data-en="Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus..."
+                  data-en="Vivamus magna justo, lacinia eget consectetur sed, convallis
+                  at tellus. Vestibulum ante ipsum primis in faucibus orci
+                  luctus et ultrices posuere cubilia Curae; Donec velit neque,
+                  auctor sit amet aliquam vel, ullamcorper sit amet ligula.
+                  Curabitur arcu erat, accumsan id imperdiet et, porttitor at
+                  sem. Curabitur aliquet quam id dui posuere blandit.
+                  Pellentesque in ipsum id orci porta dapibus. Cras ultricies
+                  ligula sed magna dictum porta."
                   data-ar="لنعيش عدالة عظيمة، لاسينيا بحاجة إلى متابعة..."
                 >
                   Vivamus magna justo, lacinia eget consectetur sed, convallis
@@ -511,7 +597,14 @@
                 </div>
                 <p
                   class="service-description service-text text-left text-[22px] leading-[26px] font-normal text-[#182f43]"
-                  data-en="Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus..."
+                  data-en="Vivamus magna justo, lacinia eget consectetur sed, convallis
+                  at tellus. Vestibulum ante ipsum primis in faucibus orci
+                  luctus et ultrices posuere cubilia Curae; Donec velit neque,
+                  auctor sit amet aliquam vel, ullamcorper sit amet ligula.
+                  Curabitur arcu erat, accumsan id imperdiet et, porttitor at
+                  sem. Curabitur aliquet quam id dui posuere blandit.
+                  Pellentesque in ipsum id orci porta dapibus. Cras ultricies
+                  ligula sed magna dictum porta."
                   data-ar="لنعيش عدالة عظيمة، لاسينيا بحاجة إلى متابعة..."
                 >
                   Vivamus magna justo, lacinia eget consectetur sed, convallis
