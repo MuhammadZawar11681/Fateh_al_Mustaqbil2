@@ -50,6 +50,7 @@
             <span>
               <select
                 class="lag-selector bg-[#f65934] rounded-[2px] w-[65px] h-[23px] text-left text-[10px] text-white"
+                id="language-selector"
               >
                 <option value="eng">English</option>
                 <option value="arb">Arabic</option>
@@ -92,6 +93,7 @@
             <span>
               <select
                 class="lag-selector bg-[#f65934] rounded-[2px] w-[65px] h-[23px] text-left text-[10px] sm:text-[9px] text-white"
+                id="language-selector"
               >
                 <option value="eng">English</option>
                 <option value="arb">Arabic</option>
@@ -289,10 +291,16 @@
               alt="plan_union"
               class="w-[48px] h-[37px] mb-2"
             />
-            <span class="text_styling block leading-[24px]"
+            <span
+              class="text_styling block leading-[24px]"
+              data-en="International And"
+              data-ar="الرحلات الدولية"
               >International And</span
             >
-            <span class="text_styling block leading-[24px]"
+            <span
+              class="text_styling block leading-[24px]"
+              data-en="Domestic Flight Tickets"
+              data-ar="وتذاكر الطيران المحلية"
               >Domestic Flight Tickets</span
             >
           </div>
@@ -316,10 +324,18 @@
               alt="Union10"
               class="w-[48px] h-[48px] mb-2"
             />
-            <span class="text_styling block leading-[24px]"
+            <span
+              class="text_styling block leading-[24px]"
+              data-en="Hotel Reservation"
+              data-ar="حجوزات الفنادق"
               >Hotel Reservation</span
             >
-            <span class="text_styling block leading-[24px]">World Wide</span>
+            <span
+              class="text_styling block leading-[24px]"
+              data-en="World Wide"
+              data-ar="في جميع أنحاء العالم"
+              >World Wide</span
+            >
           </div>
         </a>
 
@@ -341,8 +357,18 @@
               alt="Union10"
               class="w-[48px] h-[48px] mb-2"
             />
-            <span class="text_styling block leading-[24px]">Visa</span>
-            <span class="text_styling block leading-[24px]">Services</span>
+            <span
+              class="text_styling block leading-[24px]"
+              data-en="Visa"
+              data-ar="خدمات التأشيرات"
+              >Visa</span
+            >
+            <span
+              class="text_styling block leading-[24px]"
+              data-en="Services"
+              data-ar="خدمات"
+              >Services</span
+            >
           </div>
         </a>
 
@@ -364,8 +390,16 @@
               alt="Union10"
               class="w-[48px] h-[48px] mb-2"
             />
-            <span class="text_styling block leading-[24px]">International</span>
-            <span class="text_styling block leading-[24px]"
+            <span
+              class="text_styling block leading-[24px]"
+              data-en="International"
+              data-ar="رخصة القيادة"
+              >International</span
+            >
+            <span
+              class="text_styling block leading-[24px]"
+              data-en="Driving License"
+              data-ar="الدولية"
               >Driving License</span
             >
           </div>
@@ -389,10 +423,16 @@
               alt="Union10"
               class="w-[48px] h-[48px] mb-2"
             />
-            <span class="text_styling block leading-[24px]"
+            <span
+              class="text_styling block leading-[24px]"
+              data-en="Airport VIP Services"
+              data-ar="خدمات كبار الشخصيات بالمطار"
               >Airport VIP Services</span
             >
-            <span class="text_styling block leading-[24px]"
+            <span
+              class="text_styling block leading-[24px]"
+              data-en="(Meet & Greet)"
+              data-ar="(الاستقبال والترحيب)"
               >(Meet & Greet)</span
             >
           </div>
@@ -416,8 +456,16 @@
               alt="Union10"
               class="w-[48px] h-[48px] mb-2"
             />
-            <span class="text_styling block leading-[24px]">House Maid</span>
-            <span class="text_styling block leading-[24px]"
+            <span
+              class="text_styling block leading-[24px]"
+              data-en="House Maid"
+              data-ar="خدمات الخادمات"
+              >House Maid</span
+            >
+            <span
+              class="text_styling block leading-[24px]"
+              data-en="Transportation"
+              data-ar="النقل"
               >Transportation</span
             >
           </div>
@@ -441,8 +489,18 @@
               alt="Union10"
               class="w-[48px] h-[48px] mb-2"
             />
-            <span class="text_styling block leading-[24px]">Tourism</span>
-            <span class="text_styling block leading-[24px]">Packages</span>
+            <span
+              class="text_styling block leading-[24px]"
+              data-en="Tourism"
+              data-ar="حزم السياحة"
+              >Tourism</span
+            >
+            <span
+              class="text_styling block leading-[24px]"
+              data-en="Packages"
+              data-ar="العروض"
+              >Packages</span
+            >
           </div>
         </a>
 
@@ -464,10 +522,18 @@
               alt="Union10"
               class="w-[48px] h-[48px] mb-2"
             />
-            <span class="text_styling block leading-[24px]"
+            <span
+              class="text_styling block leading-[24px]"
+              data-en="Umrah & Ziyara"
+              data-ar="خدمات العمرة والزيارة"
               >Umrah & Ziyara</span
             >
-            <span class="text_styling block leading-[24px]">Services</span>
+            <span
+              class="text_styling block leading-[24px]"
+              data-en="Services"
+              data-ar="خدمات"
+              >Services</span
+            >
           </div>
         </a>
 
@@ -535,5 +601,104 @@
         &copy; All right reserved for 2024
       </p>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Function to apply language changes for different sections of the page
+      function setLanguage(lang) {
+        const phoneText = document.querySelector(".phone-text");
+        const locationText = document.querySelector(".location-text");
+        const navLinks = document.querySelectorAll("nav a");
+        const footerLinks = document.querySelectorAll(".footer-links a");
+        const footerText = document.querySelector(".footer-text");
+        const serviceTexts = document.querySelectorAll(".text_styling");
+        const heroHeadings = document.querySelectorAll(".hero-content h1");
+        const heroSection = document.querySelector(".hero-section");
+        const heroImages = document.querySelector(".hero-images");
+        const heroBackground = document.querySelector(".hero-bg");
+        const servicesSection = document.querySelector(".services");
+
+        // Switch for general page text content (header, footer, etc.)
+        if (lang === "arb") {
+          document.body.style.direction = "rtl";
+          document.body.style.textAlign = "right";
+
+          phoneText.textContent = "+966 123 456 897"; // Arabic stays the same
+          locationText.textContent = "منطقة النور الصناعية، الرياض";
+
+          navLinks.forEach((link) => {
+            link.textContent = link.getAttribute("data-ar");
+          });
+
+          footerLinks.forEach((link) => {
+            link.textContent = link.getAttribute("data-ar");
+          });
+
+          footerText.innerHTML = footerText.getAttribute("data-ar");
+
+          serviceTexts.forEach((text) => {
+            text.textContent = text.getAttribute("data-ar");
+          });
+
+          heroHeadings.forEach((heading) => {
+            heading.textContent = heading.getAttribute("data-ar");
+          });
+
+          heroSection.style.textAlign = "right";
+          heroImages.style.justifyContent = "flex-end";
+          heroBackground.style.transform = "scaleX(-1)"; // Optional: flip the hero background image
+
+          servicesSection.style.textAlign = "right";
+        } else {
+          document.body.style.direction = "ltr";
+          document.body.style.textAlign = "left";
+
+          phoneText.textContent = "+966 123 456 897";
+          locationText.textContent = "Al noor industrial area, Riyadh";
+
+          navLinks.forEach((link) => {
+            link.textContent = link.getAttribute("data-en");
+          });
+
+          footerLinks.forEach((link) => {
+            link.textContent = link.getAttribute("data-en");
+          });
+
+          footerText.innerHTML = footerText.getAttribute("data-en");
+
+          serviceTexts.forEach((text) => {
+            text.textContent = text.getAttribute("data-en");
+          });
+
+          heroHeadings.forEach((heading) => {
+            heading.textContent = heading.getAttribute("data-en");
+          });
+
+          heroSection.style.textAlign = "left";
+          heroImages.style.justifyContent = "flex-start";
+          heroBackground.style.transform = "scaleX(1)"; // Reset the hero background image
+
+          servicesSection.style.textAlign = "left";
+        }
+      }
+
+      // Event listener for language switcher (for Home page)
+      const languageSelector = document.getElementById("language-selector");
+
+      if (languageSelector) {
+        languageSelector.addEventListener("change", (e) => {
+          const selectedLang = e.target.value;
+          localStorage.setItem("selectedLang", selectedLang); // Store the selected language in localStorage
+          setLanguage(selectedLang); // Apply the language change
+        });
+      }
+
+      // Default language on page load
+      window.addEventListener("DOMContentLoaded", () => {
+        const selectedLang = localStorage.getItem("selectedLang") || "eng"; // Check localStorage or default to English
+        languageSelector.value = selectedLang; // Set the selector to the saved language
+        setLanguage(selectedLang); // Apply the language based on the saved or default language
+      });
+    </script>
   </body>
 </html>
